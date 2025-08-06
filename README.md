@@ -24,6 +24,7 @@ This is a console-based Kotlin app that simulates:
 LABNS_App/
 ├── src/
 │   └── main.kt
+|   └── models
 ├── README.md
 ├── build.gradle.kts
 ├── settings.gradle.kts

@@ -1,21 +1,8 @@
 package org.example
 
+import org.example.models.BankOffer
+import org.example.models.LoanApplication
 import kotlin.random.Random
-
-data class LoanApplication(
-    val name: String,
-    val amount: Double,
-    val durationInMonths: Int,
-    val purpose: String,
-    var status: String = "Submitted"
-)
-
-data class BankOffer(
-    val bankName: String,
-    var interestRate: Double,
-    val isNegotiable: Boolean,
-    val processingTimeInDays: Int
-)
 
 fun main() {
     println("=== Welcome to Loan Application Engine ===")

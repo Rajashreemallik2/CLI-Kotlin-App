@@ -20,3 +20,10 @@ This is a console-based Kotlin app that simulates:
 1. Clone this project
 2. Open terminal and run:
 
+## Project Structure
+LABNS_App/
+├── src/
+│   └── main.kt
+├── README.md
+├── build.gradle.kts
+├── settings.gradle.kts

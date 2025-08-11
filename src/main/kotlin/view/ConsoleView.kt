@@ -32,14 +32,18 @@ class ConsoleView {
 
     fun displayOffers(title: String, offers: List<BankOffer>) {
         println("\n$title")
-        offers.forEach { println(it) }
+        offers.forEach {
+            val formattedRate = String.format("%.2f", it.interestRate) + "%"
+            println("${it.bankName} - Interest Rate: $formattedRate - Negotiable: ${it.isNegotiable} - Processing Time: ${it.processingTimeInDays} days")
+        }
     }
-
     fun displayBestOffer(bestOffer: BankOffer?) {
         println("\n🌟 Best Offer:")
-        println(bestOffer)
+        if (bestOffer != null)
+        { val formattedRate = String.format("%.2f", bestOffer.interestRate) + "%"
+            println("${bestOffer.bankName} - Interest Rate: $formattedRate - Negotiable: ${bestOffer.isNegotiable} - Processing Time: ${bestOffer.processingTimeInDays} days")
+        }
     }
-
     fun confirmOfferAcceptance(): Boolean {
         println("\nDo you want to accept this offer? (yes/no)")
         return readLine()?.lowercase() == "yes"

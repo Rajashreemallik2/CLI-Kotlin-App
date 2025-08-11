@@ -10,10 +10,11 @@ class BankService {
         return banks.map {
             BankOffer(
                 bankName = it,
-                interestRate = Random.nextDouble(9.0, 18.0),
+                interestRate = Random.nextDouble(9.0, 18.0 ),
                 isNegotiable = Random.nextBoolean(),
                 processingTimeInDays = Random.nextInt(1, 4)
             )
+
         }
     }
 
@@ -22,12 +23,14 @@ class BankService {
         return offers.map { offer ->
             if (offer.isNegotiable) {
                 val discount = Random.nextDouble(0.5, 1.5)
-                offer.copy(interestRate = (offer.interestRate - discount).coerceAtLeast(1.0))
+                offer.copy(interestRate =(offer.interestRate- discount) - 1.0)
             } else offer
         }
     }
 
     fun findBestOffer(offers: List<BankOffer>): BankOffer? {
-        return offers.minByOrNull { it.interestRate }
+        return offers.minByOrNull {
+            it.interestRate
+        }
     }
 }
